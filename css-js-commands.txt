@@ -1,0 +1,32 @@
+CSS SELECTORS - Used to get DOM element
+tag element             div
+    (space) any child   div p
+>   direct child        div > p
+.   class               div.header
+#   id                  div#myHeader
+[]  Attribute and value div[type="magic div"] (value optional)
+:   Special operation   div:specop
+    - :nth-child()      Get element that's the nth child of its parent  div p:nth-child(3)  (3rd paragraph of div)
+
+JS COMMANDS
+document                                        represents the current webpage
+location                                        represents the current URL
+document.querySelector("<CSS Selector>")        CSS Selector (returns first result) - 1 argument "CSS Selector string"
+document.querySelectorAll("<CSS Selector>")     Insert CSS Selector (returns all results) - 1 argument "CSS Selector string"
+document.evaluate("<XPath>", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue     XPath returns element
+.click()                                        Perform single mouse click
+.innerHTML                                      Return all children. Useful for getting elements that contain text for verification
+.outerHTML                                      Returns element
+.getAttribute("<attribute name>")               Returns value of given element attribute. Useful for verification.
+.setAttribute("<attribute name>", "value")      Sets value of given element attribute. Use ("style", "css: value") to change base CSS?
+.hash                                           get or set current hash change for an element (e.g. a.hash) or for the current URL (e.g. location.hash)
+.value                                          get or set a value to an input field   (e.g. input.value = "my value")
+.<event name>()                                       initiate a change event on the Event Listener for an element
+.dispatchEvent(new Event('<event name>', {'bubbles': true}));     As above, but as a new event option (often if the above fails with 'not a function')
+
+DEVTOOLS
+Element copy > CSS Path (for CSS Selector)
+Element copy > JS Path (for JS Command with CSS Selector)
+Element Ctrl+F (Find) (to use CSS paths and selectors)
+Event listeners (see what active listeners there are)
+    - e.g. hashchange for URL fragment changes with # (e.g. going to a specific id)

@@ -1,0 +1,42 @@
+[
+    {
+        "id": 0,
+        "symbol": "--",
+        "description": null
+    },
+    {
+        "id": 1,
+        "symbol": "FF",
+        "description": "Front engine, front wheel drive"
+    },
+    {
+        "id": 2,
+        "symbol": "FR",
+        "description": "Front engine, rear wheel drive"
+    },
+    {
+        "id": 3,
+        "symbol": "MR",
+        "description": "Mid engine, rear wheel drive"
+    },
+    {
+        "id": 4,
+        "symbol": "RR",
+        "description": "Rear engine, rear wheel drive"
+    },
+    {
+        "id": 5,
+        "symbol": "F4",
+        "description": "Front engine, four wheel drive"
+    },
+    {
+        "id": 6,
+        "symbol": "M4",
+        "description": "Mid engine, four wheel drive"
+    },
+    {
+        "id": 7,
+        "symbol": "R4",
+        "description": "Rear engine, four wheel drive"
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "id": 0,
+        "description": null
+    },    
+    {
+        "id": 1,
+        "description": "Americas and Oceania"
+    },
+    {
+        "id": 2,
+        "description": "Europe"
+    },
+    {
+        "id": 3,
+        "description": "Asia"
+    }
+]

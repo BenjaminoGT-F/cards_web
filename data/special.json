@@ -1,0 +1,37 @@
+[
+    {
+        "id": 0,
+        "symbol": "",
+        "description": null
+    },
+    {
+        "id": 1,
+        "symbol": "V",
+        "description": "Variable valve timing and/or lift"
+    },
+    {
+        "id": 2,
+        "symbol": "T",
+        "description": "Turbocharged"
+    },
+    {
+        "id": 3,
+        "symbol": "D",
+        "description": "Diesel"
+    },
+    {
+        "id": 4,
+        "symbol": "S",
+        "description": "Supercharged"
+    },
+    {
+        "id": 5,
+        "symbol": "I",
+        "description": "Fuel Injection"
+    },
+    {
+        "id": 6,
+        "symbol": "H",
+        "description": "Hybrid-Electric"
+    }
+]

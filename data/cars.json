@@ -1,0 +1,209 @@
+[
+    {
+        "carId": 0,
+        "modelName": "-",
+        "trimName": "",
+        "generation": 0,
+
+        "marqueId": 0,
+        "classId": 0,
+        "decadeId": 0,
+        "racingCar": false,
+
+        "vmaxKph": 0,
+        "100KphSec": 0,
+        "numSeats": 0,
+        "storageL": 0,
+        "dimensionsM": {
+            "length": 0.00,
+            "width": 0.00,
+            "height": 0.00
+        },
+        "curbWeightKg": 0,
+        "combinedFuelConsumptionLp100Km": 0.0,
+        "safetyRating": 0.0,
+
+        "driveLayout": 0,
+        "engineCapacityL": 0.0,
+        "engineCylinders": 0,
+        "engineLayout": 0,
+        "engineSpecial": {
+            "injection": false,
+            "turbocharged": false,
+            "supercharged": false,
+            "diesel": false,
+            "hybridElectric": false
+        },
+
+        "description": null,
+        "price": null,
+        "numbersSold": 1000000
+    },
+    {
+        "carId": 1,
+        "modelName": "Punto",
+        "trimName": "",
+        "generation": 2,
+
+        "marqueId": 42,
+        "classId": 7,
+        "decadeId": 5,
+        "racingCar": false,
+
+        "vmaxKph": 155,
+        "100KphSec": 13.7,
+        "numSeats": 5,
+        "storageL": 264,
+        "dimensionsM": {
+            "length": 3.80,
+            "width": 1.66,
+            "height": 1.48
+        },
+        "curbWeightKg": 860,
+        "combinedFuelConsumptionLp100Km": 5.7,
+        "safetyRating": 3,
+
+        "driveLayout": 1,
+        "engineCapacityL": 1.6,
+        "engineCylinders": 4,
+        "engineLayout": 2,
+        "engineSpecial": {
+            "injection": true,
+            "turbocharged": false,
+            "supercharged": false,
+            "diesel": false,
+            "hybridElectric": false
+        },
+
+        "price": 7000,
+        "numbersSold": 1000000
+    },
+    {
+        "carId": 2,
+        "modelName": "Hatch",
+        "trimName": "Cooper S",
+        "generation": 2,
+
+        "marqueId": 79
+    },
+    {
+        "carId": 3,
+        "modelName": "XJ220",
+        "trimName": "",
+        "generation": 1,
+
+        "marqueId": 59
+    },
+    {
+        "carId": 4,
+        "modelName": "Hatch",
+        "trimName": "JCW",
+        "generation": 4,
+
+        "marqueId": 79
+    },
+    {
+        "carId": 5,
+        "modelName": "Clubman",
+        "trimName": "",
+        "generation": 1,
+
+        "marqueId": 79
+    },
+    {
+        "carId": 6,
+        "modelName": "Countryman",
+        "trimName": "Cooper S",
+        "generation": 4,
+
+        "marqueId": 79
+    },
+    {
+        "carId": 7,
+        "modelName": "Barchetta",
+        "trimName": "",
+        "generation": 1,
+
+        "marqueId": 42
+    },
+    {
+        "carId": 7,
+        "modelName": "Panda",
+        "trimName": "4",
+        "generation": 1,
+
+        "marqueId": 42
+    },
+    {
+        "carId": 8,
+        "modelName": "S76 Record",
+        "trimName": "",
+        "generation": 1,
+
+        "marqueId": 42
+    },
+    {
+        "carId": 9,
+        "modelName": "X-19 Martini",
+        "trimName": "",
+        "generation": 1,
+
+        "marqueId": 42
+    },
+    {
+        "carId": 10,
+        "modelName": "Veyron",
+        "trimName": "",
+        "generation": 1,
+
+        "marqueId": 14
+    },
+    {
+        "carId": 11,
+        "modelName": "Veyron",
+        "trimName": "Supersport",
+        "generation": 1,
+
+        "marqueId": 14
+    },
+    {
+        "carId": 12,
+        "modelName": "EB110",
+        "trimName": "",
+        "generation": 1,
+
+        "marqueId": 14
+    },
+    {
+        "carId": 13,
+        "modelName": "Type 35",
+        "trimName": "",
+        "generation": 1,
+
+        "marqueId": 41
+    },
+    {
+        "carId": 14,
+        "modelName": "Type 57",
+        "trimName": "",
+        "generation": 1,
+
+        "marqueId": 41
+    },
+    {
+        "carId": 15,
+        "modelName": "Chiron",
+        "trimName": "",
+        "generation": 1,
+
+        "marqueId": 41
+    },
+    {
+        "carId": 16,
+        "modelName": "Divo",
+        "trimName": "",
+        "generation": 1,
+
+        "marqueId": 41
+    }
+]

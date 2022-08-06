@@ -1,0 +1,52 @@
+[
+    {
+        "id": 0,
+        "symbol": "-",
+        "description": null
+    },
+    {
+        "id": 1,
+        "symbol": "R",
+        "description": "Racing single-seaters or prototypes (e.g. Formula Ford)"
+    },
+    {
+        "id": 2,
+        "symbol": "S",
+        "description": "Super cars and sports cars (e.g. Ford GT)"
+    },
+    {
+        "id": 3,
+        "symbol": "A",
+        "description": "Full-size luxury and GT sports. EURO-NCAP F/S-Segment (e.g. Ford Mustang)"
+    },
+    {
+        "id": 4,
+        "symbol": "B",
+        "description": "Large executive or mid-size luxury car. EURO-NCAP E-Segment (e.g. Ford Taurus)"
+    },
+    {
+        "id": 5,
+        "symbol": "C",
+        "description": "Mid-size compact executive or small family car. EURO-NCAP D-Segement (e.g. Ford Mondeo/Fusion)"
+    },
+    {
+        "id": 6,
+        "symbol": "D",
+        "description": "Compact or small family car. EURO-NCAP C-Segment (e.g. Ford Focus)"
+    },
+    {
+        "id": 7,
+        "symbol": "E",
+        "description": "Subcompact, supermini or city car. EURO-NCAP A/B-Segment (e.g. Ford Fiesta)"
+    },
+    {
+        "id": 8,
+        "symbol": "K",
+        "description": "Kei cars, microcars and bubble cars (e.g. Ford Ka)"
+    },
+    {
+        "id": 9,
+        "symbol": "U",
+        "description": "Unclassified"
+    }
+]

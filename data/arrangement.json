@@ -1,0 +1,42 @@
+[
+    {
+        "id": 0,
+        "symbol": "-",
+        "description": null
+    },
+    {
+        "id": 1,
+        "symbol": "I",
+        "description": "Straight"
+    },
+    {
+        "id": 2,
+        "symbol": "U",
+        "description": "Double straight and square four"
+    },
+    {
+        "id": 3,
+        "symbol": "V",
+        "description": "Vee, including 180 degree vee"
+    },
+    {
+        "id": 4,
+        "symbol": "W",
+        "description": "Double vee or vee and straight"
+    },
+    {
+        "id": 5,
+        "symbol": "F",
+        "description": "Flat or boxer engine (horizontally opposed)"
+    },
+    {
+        "id": 6,
+        "symbol": "H",
+        "description": "Double flat or boxer engine (double horizontally opposed)"
+    },
+    {
+        "id": 7,
+        "symbol": "O",
+        "description": "Radial/rotary, including pistonless (Wankel)"
+    }
+]

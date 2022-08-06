@@ -1,0 +1,15 @@
+table tr td {
+    border: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	border-left: 1px solid #000000;
+	border-right: 1px solid #000000;
+	border-top: 1px solid #000000;
+}
+
+table.diagram tr td {
+    border: 1px solid red;
+	border-bottom: 1px solid red;
+	border-left: 1px solid red;
+	border-right: 1px solid red;
+	border-top: 1px solid red;	
+}
