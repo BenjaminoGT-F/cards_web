@@ -3,10 +3,9 @@
         "carId": 0,
         "modelName": "-",
         "trimName": "",
-        "generation": 0,
-
+        "generationId": 0,
         "marqueId": 0,
-        "classId": 0,
+        "classeId": 0,
         "decadeId": 0,
         "racingCar": false,
 
@@ -43,10 +42,9 @@
         "carId": 1,
         "modelName": "Punto",
         "trimName": "",
-        "generation": 2,
-
+        "generationId": 2,
         "marqueId": 42,
-        "classId": 7,
+        "classeId": 7,
         "decadeId": 5,
         "racingCar": false,
 
@@ -82,128 +80,160 @@
         "carId": 2,
         "modelName": "Hatch",
         "trimName": "Cooper S",
-        "generation": 2,
-
-        "marqueId": 79
+        "generationId": 2,
+        "marqueId": 79,
+        "classeId": 7,
+        "decadeId": 5,
+        "racingCar": false
     },
     {
         "carId": 3,
         "modelName": "XJ220",
         "trimName": "",
-        "generation": 1,
-
-        "marqueId": 59
+        "generationId": 1,
+        "marqueId": 59,
+        "classeId": 2,
+        "decadeId": 4,
+        "racingCar": false
     },
     {
         "carId": 4,
         "modelName": "Hatch",
         "trimName": "JCW",
-        "generation": 4,
-
-        "marqueId": 79
+        "generationId": 3,
+        "marqueId": 79,
+        "classeId": 7,
+        "decadeId": 6,
+        "racingCar": false
     },
     {
         "carId": 5,
         "modelName": "Clubman",
         "trimName": "",
-        "generation": 1,
-
-        "marqueId": 79
+        "generationId": 1,
+        "marqueId": 79,
+        "classeId": 7,
+        "decadeId": 5,
+        "racingCar": false
     },
     {
         "carId": 6,
         "modelName": "Countryman",
         "trimName": "Cooper S",
-        "generation": 4,
-
-        "marqueId": 79
+        "generationId": 3,
+        "marqueId": 79,
+        "classeId": 6,
+        "decadeId": 6,
+        "racingCar": false
     },
     {
         "carId": 7,
         "modelName": "Barchetta",
         "trimName": "",
-        "generation": 1,
-
-        "marqueId": 42
+        "generationId": 1,
+        "marqueId": 42,
+        "classeId": 0,
+        "decadeId": 0,
+        "racingCar": false
     },
     {
         "carId": 7,
         "modelName": "Panda",
         "trimName": "4",
-        "generation": 1,
-
-        "marqueId": 42
+        "generationId": 1,
+        "marqueId": 42,
+        "classeId": 7,
+        "decadeId": 0,
+        "racingCar": false
     },
     {
         "carId": 8,
         "modelName": "S76 Record",
         "trimName": "",
-        "generation": 1,
-
-        "marqueId": 42
+        "generationId": 1,
+        "marqueId": 42,
+        "classeId": 0,
+        "decadeId": 0,
+        "racingCar": false
     },
     {
         "carId": 9,
         "modelName": "X-19 Martini",
         "trimName": "",
-        "generation": 1,
-
-        "marqueId": 42
+        "generationId": 1,
+        "marqueId": 42,
+        "classeId": 0,
+        "decadeId": 0,
+        "racingCar": false
     },
     {
         "carId": 10,
         "modelName": "Veyron",
         "trimName": "",
-        "generation": 1,
-
-        "marqueId": 14
+        "generationId": 1,
+        "marqueId": 14,
+        "classeId": 0,
+        "decadeId": 0,
+        "racingCar": false
     },
     {
         "carId": 11,
         "modelName": "Veyron",
         "trimName": "Supersport",
-        "generation": 1,
-
-        "marqueId": 14
+        "generationId": 1,
+        "marqueId": 14,
+        "classeId": 0,
+        "decadeId": 0,
+        "racingCar": false
     },
     {
         "carId": 12,
         "modelName": "EB110",
         "trimName": "",
-        "generation": 1,
-
-        "marqueId": 14
+        "generationId": 1,
+        "marqueId": 14,
+        "classeId": 0,
+        "decadeId": 0,
+        "racingCar": false
     },
     {
         "carId": 13,
         "modelName": "Type 35",
         "trimName": "",
-        "generation": 1,
-
-        "marqueId": 41
+        "generationId": 1,
+        "marqueId": 41,
+        "classeId": 0,
+        "decadeId": 0,
+        "racingCar": false
     },
     {
         "carId": 14,
         "modelName": "Type 57",
         "trimName": "",
-        "generation": 1,
-
-        "marqueId": 41
+        "generationId": 1,
+        "marqueId": 41,
+        "classeId": 0,
+        "decadeId": 0,
+        "racingCar": false
     },
     {
         "carId": 15,
         "modelName": "Chiron",
         "trimName": "",
-        "generation": 1,
-
-        "marqueId": 41
+        "generationId": 1,
+        "marqueId": 41,
+        "classeId": 0,
+        "decadeId": 0,
+        "racingCar": false
     },
     {
         "carId": 16,
         "modelName": "Divo",
         "trimName": "",
-        "generation": 1,
-
-        "marqueId": 41
+        "generationId": 1,
+        "marqueId": 41,
+        "classeId": 0,
+        "decadeId": 0,
+        "racingCar": false
     }
 ]

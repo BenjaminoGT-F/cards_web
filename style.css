@@ -1,0 +1,34 @@
+input {
+    padding: 0;
+    border: 0;
+    outline: 1px solid gray;
+}
+
+input.card-stat {
+    width: 32px;
+}
+
+input.card-detail {
+    width: 192px;
+}
+
+label.card-stat {
+    display: inline-block;
+    padding: 0;
+    width: 96px;
+}
+
+label.selector {
+    display: inline-block;
+    width: 110px;
+}
+
+select.selector {
+    display: inline-block;
+    width: 256px;
+}
+
+img.card-photo {
+    width: 256px;
+    height: 160px;
+}

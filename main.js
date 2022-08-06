@@ -8,15 +8,17 @@ import {CarCard} from "./modules/card.car.js";
 // Create a new selectors option for countries with a label and a default blank option
 const divSelectors = document.getElementById("selectors");
 const divCarCard = document.getElementById("carCard");
-let option, p; // Container for creating and setting new options and child paragraphs
+let option; // Container for creating and setting new options
 
-divSelectors.appendChild(document.createElement("label"))
+divSelectors.appendChild(document.createElement("label"));
 let labelCountries = document.querySelector("div#selectors > label:last-child");
+labelCountries.className = "selector";
 labelCountries.setAttribute("for","countries");
 labelCountries.innerHTML = "Select a country: ";
 
 divSelectors.appendChild(document.createElement("select"))
 let selectCountries = document.querySelector("div#selectors > select:last-child");
+selectCountries.className = "selector";
 selectCountries.setAttribute("id", "countries");
 
 selectCountries.appendChild(document.createElement("option"));
@@ -29,27 +31,27 @@ option.setAttribute("hidden", null);
 divSelectors.appendChild(document.createElement("br"));
 divSelectors.appendChild(document.createElement("label"));
 let labelMarques = document.querySelector("div#selectors > label:last-child");
+labelMarques.className = "selector";
 labelMarques.setAttribute("for","marques");
 labelMarques.innerHTML = "Select a marque: ";
-labelMarques.setAttribute("hidden", true);
 
 divSelectors.appendChild(document.createElement("select"));
 let selectMarques = document.querySelector("div#selectors > select:last-child");
+selectMarques.className = "selector";
 selectMarques.setAttribute("id", "marques");
-selectMarques.setAttribute("hidden", true);
 selectMarques.setAttribute("disabled", true);
 
 divSelectors.appendChild(document.createElement("br"));
 divSelectors.appendChild(document.createElement("label"));
 let labelVehicles = document.querySelector("div#selectors > label:last-child");
+labelVehicles.className = "selector";
 labelVehicles.setAttribute("for","vehicles");
 labelVehicles.innerHTML = "Select a vehicle: ";
-labelVehicles.setAttribute("hidden", true);
 
 divSelectors.appendChild(document.createElement("select"));
 let selectVehicles = document.querySelector("div#selectors > select:last-child");
+selectVehicles.className = "selector";
 selectVehicles.setAttribute("id", "vehicles");
-selectVehicles.setAttribute("hidden", true);
 selectVehicles.setAttribute("disabled", true);
 
 // For each country in the DB, add a new option to the selector, get the newly added option and add the relevant details
@@ -69,11 +71,12 @@ countriesList.forEach(function (value, index) {
 
 // COUNTRIES
 document.querySelector("select#countries").addEventListener("change", function() {
-    // Unhide the marques selector
+    // Refresh the status of the other selectors
     selectMarques = document.querySelector("select#marques");
+    selectVehicles = document.querySelector("select#vehicles");
     
     // remove any existing nodes
-    while(selectMarques.lastChild) {
+    while (selectMarques.lastChild) {
         selectMarques.remove(selectMarques.lastChild);
     };
     // Add the blank one
@@ -84,11 +87,13 @@ document.querySelector("select#countries").addEventListener("change", function()
     option.setAttribute("hidden", null);
 
     // If the marques selector already exists, no need to unhide it again
-    if (selectMarques.getAttribute("hidden")) {
-        labelMarques.removeAttribute("hidden");
+    if (selectMarques.getAttribute("disabled")) {
         labelMarques.removeAttribute("disabled");
-        selectMarques.removeAttribute("hidden");
         selectMarques.removeAttribute("disabled");
+    };
+    // If the vehicle one has been activated from a previous run, disable that until a new marque has been picked
+    if (selectVehicles.getAttribute("disabled") == null) {
+        selectVehicles.setAttribute("disabled", null);
     };
 
     // Loop through each marque in the database returning those that match the ID to populate the marques list
@@ -123,10 +128,8 @@ document.querySelector("select#marques").addEventListener("change", function() {
     option.setAttribute("hidden", null);
 
     // If the vehicles selector already exists, no need to unhide it again
-    if (selectVehicles.getAttribute("hidden")) {
-        labelVehicles.removeAttribute("hidden");
+    if (selectVehicles.getAttribute("disabled")) {
         labelVehicles.removeAttribute("disabled");
-        selectVehicles.removeAttribute("hidden");
         selectVehicles.removeAttribute("disabled");
     };
 
@@ -137,7 +140,7 @@ document.querySelector("select#marques").addEventListener("change", function() {
             selectVehicles.appendChild(document.createElement("option")); // TODO: set variable option directly to this like "p" below?
             option = document.querySelector("select#vehicles > option:last-child");
             option.value = index;
-            option.innerHTML = value.modelName + " " + value.trimName + " " + utils.returnGenerationRoman(value.generation);
+            option.innerHTML = value.modelName + " " + value.trimName + " " + utils.generationInRoman(value.generationId);
         };
     });
 
@@ -146,17 +149,15 @@ document.querySelector("select#marques").addEventListener("change", function() {
 
 // VEHICLES
 document.querySelector("select#vehicles").addEventListener("change", function() {
-    // In the card div, create a paragraph to include the inner HTML for all the car stats
-    p = divCarCard.appendChild(document.createElement("p"));
-    // Get car card from database based on currently selected value
+    // First clear any exist card
+    if (document.querySelector("div#carCard > p")) {
+        divCarCard.removeChild(document.querySelector("div#carCard > p"));
+    };
+
+    // Get car basic stats from database based on currently selected value, then generate a new car card from these stats
     let car = vehiclesList[document.querySelector("select#vehicles").value];
-    // Create new card card object from base stats
+    let card = new CarCard(car, "-");
 
-    // then write it to innerHTML
-    p.innerHTML = car.modelName + " " + car.trimName + " " + utils.returnGenerationRoman(car.generation) // replace with car card class
-    divCarCard.removeAttribute("hidden");
-    divCarCard.removeAttribute("disabled");
-    
-    // This will require use of the car class (to be located in modules) which will hold all the retrieved and calculated information such as stats
-
+    console.log("DEBUG: " + JSON.stringify(car));
+    console.log("DEBUG: " + JSON.stringify(card));
 });

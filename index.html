@@ -4,13 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./style.css"/>
 </head>
 <body>
     <div id="selectors">
         <h1>Find a dealer</h1>
     </div>
-    <div hidden disabled id="carCard">
+    <div id="carCard">
         <h1>Car card</h1>
+        <div>
+            <input disabled class="card-stat" name="marque"></input><input disabled class="card-detail" name="model"></input><input disabled class="card-stat" name="class">
+        </div>
+        <img class="card-photo"></img><br>
+        <div>
+            <input disabled class="card-stat" name="decade"></input><input disabled class="card-detail" name=""></input><input disabled class="card-stat" name="nation">
+        </div>
+        <div>
+            <label class="card-stat" for="speed"></label><input disabled class="card-stat" name="speed"><label class="card-stat" for="weight"></label><input disabled class="card-stat" name="weight"></input><br>
+            <label class="card-stat" for="acceleration"></label><input disabled class="card-stat" name="acceleration"></input><label class="card-stat" for="capacity"></label><input disabled class="card-stat" name="capacity"></input><br>
+            <label class="card-stat" for="turning"></label><input disabled class="card-stat" name="turning"></input><label class="card-stat" for="safety"></label><input disabled class="card-stat" name="safety"></input>
+        </div>
     </div>
 
     <script type="module" src="./main.js"></script>
