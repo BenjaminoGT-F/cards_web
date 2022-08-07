@@ -2,49 +2,47 @@ import marques from "../data/marque.json" assert {type: "json"};
 import classes from "../data/classe.json" assert {type: "json"};
 import decades from "../data/decade.json" assert {type: "json"};
 import nations from "../data/nation.json" assert {type: "json"};
-import {generateRandomReg, generationInRoman} from "./utils.js";
+import {generateRandomReg, generationInRoman, statCalculator} from "./utils.js";
 
 export class CarCard {
     constructor(vehicle, reg) {
         this.carId = vehicle.carId;
-        this.reg = this.getReg(reg);
+        this.reg = (function() {
+            if (reg) {
+                return reg;
+            }
+            else {
+                return generateRandomReg();
+            };
+        })();        
         this.modelName = vehicle.modelName;
-        this.modelTrim = vehicle.modelTrim;
-        this.generation = this.getGen(vehicle.generationId);
-        this.marque = this.getMarque(vehicle.marqueId);
-        this.class = this.getClass(vehicle.classeId);
-        this.decade = this.getDecade(vehicle.decadeId);
-        this.nation = this.getNation(vehicle.marqueId); // Note nationality is derived from the marque in the marques database. It's not stored within car data.
-        this.holo = vehicle.racingCar;        
-    };
+        this.trimName = vehicle.trimName;
+        this.generation = generationInRoman(vehicle.generationId);
+        this.marque = marques[vehicle.marqueId].name;
+        this.classe = classes[vehicle.classeId].symbol;
+        this.decade = decades[vehicle.decadeId].symbol;
+        this.nation = nations[marques[vehicle.marqueId].nationality].symbol;
+        this.holo = vehicle.racingCar;
 
-    getReg(reg) {
-        if (reg) {
-            return reg;
-        }
-        else {
-            return generateRandomReg();
-        };
-    };
-
-    getGen(id) {
-        return generationInRoman(id);
-    };
-
-    getMarque(id) {
-        return marques[id].name;
-    };
-
-    getClass(id) {
-        return classes[id].symbol;
-    };
-
-    getDecade(id) {
-        return decades[id].symbol;
-    };
-
-    getNation(marqueId) {
-        let id = marques[marqueId].nationality
-        return nations[id].symbol;
+        this.topSpeed = statCalculator(vehicle.vmaxKph, 80, 400);
+        this.acceleration = 101 - statCalculator(vehicle.acc100KphSec, 3, 15);
+        this.turning = 101 - (function() {
+            // To review this. Does height need more of an impact?
+            let combined = vehicle.dimensionsM.length + vehicle.dimensionsM.width + vehicle.dimensionsM.height;
+            return statCalculator(combined, 6, 10);
+        })();
+        this.durability = statCalculator(vehicle.kerbWeightKg, 500, 2700);
+        this.endurance = (function() {
+            // needs to be better worked-out to find the most fuel efficient cars with the biggest fuel tank and vice versa
+            // Ford Focus 1,000 miles on single 52L tank
+            let consumption = statCalculator(vehicle.combinedFuelConsumptionMpg, 5, 65);
+            let tankSize = statCalculator(vehicle.fuelTankCapacityL, 5, 130);
+            return Math.round((consumption + tankSize) / 2);
+        })();
+        this.style = vehicle.styleRating;
+        
+        this.overall = Math.round((this.topSpeed + this.acceleration + this.turning + this.durability + this.endurance + this.style)/6);
+        this.cost = statCalculator(vehicle.price, 3000, 300000);
+        this.rarity = statCalculator(vehicle.numbersSold, 0, 250000);
     };
 }

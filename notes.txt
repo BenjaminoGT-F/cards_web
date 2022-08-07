@@ -1,0 +1,27 @@
+/*
+3000 > 10000
+Peel P50
+    Length	1340
+    Width	980
+    Height	1000
+    [SUM]   [3320]
+    [PROD]  
+Smart ForTwo
+    Length	2695
+    Width	1663
+    Height	1555
+    [SUM]   [5913]
+
+Rolls Royce Phantom Sedan EWB
+    Length  5982
+    Width	2018
+    Height	1656
+Paramount Marauder
+    Length  6400
+    Width   2660
+    Height  2745
+Lincoln Navigator LWB
+    Length  5636
+    Width   2029
+    Height	1989
+*/

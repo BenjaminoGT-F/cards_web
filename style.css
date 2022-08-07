@@ -15,7 +15,8 @@ input.card-detail {
 label.card-stat {
     display: inline-block;
     padding: 0;
-    width: 96px;
+    width: 92px;
+    padding-left: 4px;
 }
 
 label.selector {

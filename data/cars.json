@@ -10,7 +10,7 @@
         "racingCar": false,
 
         "vmaxKph": 0,
-        "100KphSec": 0,
+         "acc100KphSec": 0,
         "numSeats": 0,
         "storageL": 0,
         "dimensionsM": {
@@ -18,8 +18,9 @@
             "width": 0.00,
             "height": 0.00
         },
-        "curbWeightKg": 0,
-        "combinedFuelConsumptionLp100Km": 0.0,
+        "kerbWeightKg": 0,
+        "combinedFuelConsumptionMpg": 0.0,
+        "fuelTankSizeL": 0,
         "safetyRating": 0.0,
 
         "driveLayout": 0,
@@ -49,7 +50,7 @@
         "racingCar": false,
 
         "vmaxKph": 155,
-        "100KphSec": 13.7,
+         "acc100KphSec": 14.3,
         "numSeats": 5,
         "storageL": 264,
         "dimensionsM": {
@@ -57,12 +58,14 @@
             "width": 1.66,
             "height": 1.48
         },
-        "curbWeightKg": 860,
-        "combinedFuelConsumptionLp100Km": 5.7,
+        "kerbWeightKg": 860,
+        "combinedFuelConsumptionMpg": 50,
+        "fuelTankCapacityL": 47,
         "safetyRating": 3,
+        "styleRating": 80,
 
         "driveLayout": 1,
-        "engineCapacityL": 1.6,
+        "engineCapacityL": 1.2,
         "engineCylinders": 4,
         "engineLayout": 2,
         "engineSpecial": {
@@ -74,7 +77,7 @@
         },
 
         "price": 7000,
-        "numbersSold": 1000000
+        "numbersSold": 100000
     },
     {
         "carId": 2,
