@@ -33,3 +33,7 @@ img.card-photo {
     width: 256px;
     height: 160px;
 }
+
+button.buy {
+    margin: 24px;
+}

@@ -20,9 +20,11 @@
         },
         "kerbWeightKg": 0,
         "combinedFuelConsumptionMpg": 0.0,
-        "fuelTankSizeL": 0,
+        "fuelTankCapacityL": 0,
         "safetyRating": 0.0,
+        "styleRating": 0,
 
+        "engineBhp": 0,
         "driveLayout": 0,
         "engineCapacityL": 0.0,
         "engineCylinders": 0,
@@ -44,13 +46,13 @@
         "modelName": "Punto",
         "trimName": "",
         "generationId": 2,
-        "marqueId": 42,
+        "marqueId": 1,
         "classeId": 7,
-        "decadeId": 5,
+        "decadeId": 4,
         "racingCar": false,
 
         "vmaxKph": 155,
-         "acc100KphSec": 14.3,
+         "acc100KphSec": 13.8,
         "numSeats": 5,
         "storageL": 264,
         "dimensionsM": {
@@ -59,11 +61,12 @@
             "height": 1.48
         },
         "kerbWeightKg": 860,
-        "combinedFuelConsumptionMpg": 50,
+        "combinedFuelConsumptionMpg": 49,
         "fuelTankCapacityL": 47,
         "safetyRating": 3,
         "styleRating": 80,
 
+        "engineBhp": 60,
         "driveLayout": 1,
         "engineCapacityL": 1.2,
         "engineCylinders": 4,
@@ -76,167 +79,176 @@
             "hybridElectric": false
         },
 
-        "price": 7000,
+        "desription": null,
+        "price": 11595,
         "numbersSold": 100000
     },
     {
         "carId": 2,
-        "modelName": "Hatch",
-        "trimName": "Cooper S",
+        "modelName": "Punto",
+        "trimName": "HGT Abarth",
         "generationId": 2,
-        "marqueId": 79,
+        "marqueId": 1,
         "classeId": 7,
-        "decadeId": 5,
-        "racingCar": false
+        "decadeId": 4,
+        "racingCar": false,
+
+        "vmaxKph": 204,
+         "acc100KphSec": 8.3,
+        "numSeats": 5,
+        "storageL": 264,
+        "dimensionsM": {
+            "length": 3.80,
+            "width": 1.66,
+            "height": 1.48
+        },
+        "kerbWeightKg": 1040,
+        "combinedFuelConsumptionMpg": 34,
+        "fuelTankCapacityL": 47,
+        "safetyRating": 3,
+        "styleRating": 82,
+
+        "engineBhp": 130,
+        "driveLayout": 1,
+        "engineCapacityL": 1.8,
+        "engineCylinders": 4,
+        "engineLayout": 2,
+        "engineSpecial": {
+            "injection": true,
+            "turbocharged": false,
+            "supercharged": false,
+            "diesel": false,
+            "hybridElectric": false
+        },
+
+        "desription": null,
+        "price": 22078,
+        "numbersSold": 10000
     },
     {
         "carId": 3,
-        "modelName": "XJ220",
-        "trimName": "",
-        "generationId": 1,
-        "marqueId": 59,
-        "classeId": 2,
-        "decadeId": 4,
-        "racingCar": false
+        "modelName": "Hatch",
+        "trimName": "Cooper S",
+        "generationId": 2,
+        "marqueId": 3,
+        "classeId": 7,
+        "decadeId": 5,
+        "racingCar": false,
+
+        "vmaxKph": 229,
+        "acc100KphSec": 6.8,
+        "numSeats": 4,
+        "storageL": 160,
+        "dimensionsM": {
+            "length": 3.73,
+            "width": 1.91,
+            "height": 1.40
+        },
+        "kerbWeightKg": 1130,
+        "combinedFuelConsumptionMpg": 48,
+        "fuelTankCapacityL": 50,
+        "safetyRating": 3.3,
+        "styleRating": 85,
+
+        "engineBhp": 181,
+        "driveLayout": 1,
+        "engineCapacityL": 1.6,
+        "engineCylinders": 4,
+        "engineLayout": 1,
+        "engineSpecial": {
+            "injection": true,
+            "turbocharged": true,
+            "supercharged": false,
+            "diesel": false,
+            "hybridElectric": false
+        },
+
+        "description": null,
+        "price": 27281,
+        "numbersSold": 1000000
+    },
+    {
+        "carId": 3,
+        "modelName": "Hatch",
+        "trimName": "JCW GP",
+        "generationId": 3,
+        "marqueId": 3,
+        "classeId": 7,
+        "decadeId": 7,
+        "racingCar": false,
+
+        "vmaxKph": 264,
+        "acc100KphSec": 5.2,
+        "numSeats": 4,
+        "storageL": 160,
+        "dimensionsM": {
+            "length": 3.87,
+            "width": 1.73,
+            "height": 1.41
+        },
+        "kerbWeightKg": 1235,
+        "combinedFuelConsumptionMpg": 41,
+        "fuelTankCapacityL": 40,
+        "safetyRating": 4,
+        "styleRating": 90,
+
+        "engineBhp": 306,
+        "driveLayout": 1,
+        "engineCapacityL": 2.0,
+        "engineCylinders": 4,
+        "engineLayout": 1,
+        "engineSpecial": {
+            "injection": true,
+            "turbocharged": true,
+            "supercharged": false,
+            "diesel": false,
+            "hybridElectric": false
+        },
+
+        "description": null,
+        "price": 39081,
+        "numbersSold": 5000
     },
     {
         "carId": 4,
-        "modelName": "Hatch",
-        "trimName": "JCW",
-        "generationId": 3,
-        "marqueId": 79,
-        "classeId": 7,
-        "decadeId": 6,
-        "racingCar": false
-    },
-    {
-        "carId": 5,
-        "modelName": "Clubman",
+        "modelName": "XJ220",
         "trimName": "",
         "generationId": 1,
-        "marqueId": 79,
-        "classeId": 7,
-        "decadeId": 5,
-        "racingCar": false
-    },
-    {
-        "carId": 6,
-        "modelName": "Countryman",
-        "trimName": "Cooper S",
-        "generationId": 3,
-        "marqueId": 79,
-        "classeId": 6,
-        "decadeId": 6,
-        "racingCar": false
-    },
-    {
-        "carId": 7,
-        "modelName": "Barchetta",
-        "trimName": "",
-        "generationId": 1,
-        "marqueId": 42,
-        "classeId": 0,
-        "decadeId": 0,
-        "racingCar": false
-    },
-    {
-        "carId": 7,
-        "modelName": "Panda",
-        "trimName": "4",
-        "generationId": 1,
-        "marqueId": 42,
-        "classeId": 7,
-        "decadeId": 0,
-        "racingCar": false
-    },
-    {
-        "carId": 8,
-        "modelName": "S76 Record",
-        "trimName": "",
-        "generationId": 1,
-        "marqueId": 42,
-        "classeId": 0,
-        "decadeId": 0,
-        "racingCar": false
-    },
-    {
-        "carId": 9,
-        "modelName": "X-19 Martini",
-        "trimName": "",
-        "generationId": 1,
-        "marqueId": 42,
-        "classeId": 0,
-        "decadeId": 0,
-        "racingCar": false
-    },
-    {
-        "carId": 10,
-        "modelName": "Veyron",
-        "trimName": "",
-        "generationId": 1,
-        "marqueId": 14,
-        "classeId": 0,
-        "decadeId": 0,
-        "racingCar": false
-    },
-    {
-        "carId": 11,
-        "modelName": "Veyron",
-        "trimName": "Supersport",
-        "generationId": 1,
-        "marqueId": 14,
-        "classeId": 0,
-        "decadeId": 0,
-        "racingCar": false
-    },
-    {
-        "carId": 12,
-        "modelName": "EB110",
-        "trimName": "",
-        "generationId": 1,
-        "marqueId": 14,
-        "classeId": 0,
-        "decadeId": 0,
-        "racingCar": false
-    },
-    {
-        "carId": 13,
-        "modelName": "Type 35",
-        "trimName": "",
-        "generationId": 1,
-        "marqueId": 41,
-        "classeId": 0,
-        "decadeId": 0,
-        "racingCar": false
-    },
-    {
-        "carId": 14,
-        "modelName": "Type 57",
-        "trimName": "",
-        "generationId": 1,
-        "marqueId": 41,
-        "classeId": 0,
-        "decadeId": 0,
-        "racingCar": false
-    },
-    {
-        "carId": 15,
-        "modelName": "Chiron",
-        "trimName": "",
-        "generationId": 1,
-        "marqueId": 41,
-        "classeId": 0,
-        "decadeId": 0,
-        "racingCar": false
-    },
-    {
-        "carId": 16,
-        "modelName": "Divo",
-        "trimName": "",
-        "generationId": 1,
-        "marqueId": 41,
-        "classeId": 0,
-        "decadeId": 0,
-        "racingCar": false
+        "marqueId": 2,
+        "classeId": 2,
+        "decadeId": 4,
+        "racingCar": false,
+
+        "vmaxKph": 343,
+        "acc100KphSec": 3.8,
+        "numSeats": 0,
+        "storageL": 0,
+        "dimensionsM": {
+            "length": 4.93,
+            "width": 2.22,
+            "height": 1.15
+        },
+        "kerbWeightKg": 1470,
+        "combinedFuelConsumptionMpg": 32,
+        "fuelTankCapacityL": 90,
+        "safetyRating": 2.2,
+        "styleRating": 85,
+
+        "engineBhp": 543,
+        "driveLayout": 3,
+        "engineCapacityL": 3.5,
+        "engineCylinders": 6,
+        "engineLayout": 3,
+        "engineSpecial": {
+            "injection": true,
+            "turbocharged": true,
+            "supercharged": false,
+            "diesel": false,
+            "hybridElectric": false
+        },
+
+        "description": null,
+        "price": 500000,
+        "numbersSold": 282
     }
 ]

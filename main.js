@@ -36,11 +36,12 @@ option.setAttribute("disabled", null);
 option.setAttribute("hidden", null);
 // Loop through database to add each country
 countriesList.forEach(function (value, index) {
-    selectCountries.appendChild(document.createElement("option"));
-    // .
-    option = document.querySelector("select#countries > option:last-child");
-    option.value = index;
-    option.innerHTML = value.description;
+    if (value.id) {     // Skip out record 0
+        selectCountries.appendChild(document.createElement("option"));
+        option = document.querySelector("select#countries > option:last-child");
+        option.value = index;
+        option.innerHTML = value.description;
+    };
 });
 
 // CREATE MARQUES
@@ -186,4 +187,6 @@ function updateCard(card) {
     document.querySelector("div#carCard input#durability").value = card.durability;
     document.querySelector("div#carCard input#endurance").value = card.endurance;
     document.querySelector("div#carCard input#style").value = card.style;
+    document.querySelector("div#carCard input#cost").value = card.cost;
+    document.querySelector("div#carCard input#rarity").value = card.rarity;
 };
