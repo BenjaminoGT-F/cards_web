@@ -5,9 +5,130 @@ import vehiclesList from "./data/cars.json" assert {type: "json"};
 import * as utils from "./modules/utils.js";
 import {CarCard} from "./modules/card.car.js";
 
-const divSelectors = document.getElementById("selectors");
-const divCarCard = document.getElementById("carCard");
-let option; // Container for creating and setting new options
+let div, option; // Containers for creating and setting new elements
+
+/////////////////////////////////////////////////////////////////////////////////////////
+// BASE STRUCTURE BUILDER ///////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+
+let scriptMain = document.querySelector("script[src='./main.js']");
+
+let divSelectors = scriptMain.parentNode.insertBefore(document.createElement("div"), scriptMain.nextSibling);
+divSelectors.setAttribute("id", "selectors");
+let h1Dealer = divSelectors.appendChild(document.createElement("h1"));
+h1Dealer.innerHTML = "Find a Dealer"
+
+let divCarCard = divSelectors.parentNode.insertBefore(document.createElement("div"), divSelectors.nextSibling);
+divCarCard.setAttribute("id", "carCard");
+let h1CarCard = divCarCard.appendChild(document.createElement("h1"));
+h1CarCard.innerHTML = "Car Card";
+
+/////////////////////////////////////////////////////////////////////////////////////////
+// CAR CARD BUILDER /////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+
+createCarCardInputs(false, divCarCard.appendChild(document.createElement("div")), [
+    {
+        class: "card-stat",
+        id: "marque"
+    },
+    {
+        class: "card-detail",
+        id: "name"
+    },
+    {
+        class: "card-stat",
+        id: "classe"
+    }
+]);
+let cardPhoto = divCarCard.appendChild(document.createElement("img"));
+cardPhoto.id = "cardPhoto";
+cardPhoto.className = "card-photo";
+createCarCardInputs(false, divCarCard.appendChild(document.createElement("div")), [
+    {
+        class: "card-stat",
+        id: "decade"
+    },
+    {
+        class: "card-detail",
+        id: "description"
+    },
+    {
+        class: "card-stat",
+        id: "nation"
+    }
+]);
+createCarCardInputs(true, divCarCard.appendChild(document.createElement("div")), [
+    {
+        class: "card-stat",
+        id: "top-speed",
+        label: "Top Speed"
+    },
+    {
+        class: "card-stat",
+        id: "durability",
+        label: "Durability"
+    }
+]);
+createCarCardInputs(true, divCarCard.appendChild(document.createElement("div")), [
+    {
+        class: "card-stat",
+        id: "acceleration",
+        label: "Acceleration"
+    },
+    {
+        class: "card-stat",
+        id: "endurance",
+        label: "Endurance"
+    }
+]);
+createCarCardInputs(true, divCarCard.appendChild(document.createElement("div")), [
+    {
+        class: "card-stat",
+        id: "turning",
+        label: "Turning"
+    },
+    {
+        class: "card-stat",
+        id: "style",
+        label: "Style"
+    }
+]);
+createCarCardInputs(true, divCarCard.appendChild(document.createElement("div")), [
+    {
+        class: "card-stat",
+        id: "cost",
+        label: "Credits"
+    },
+    {
+        class: "card-stat",
+        id: "rarity",
+        label: "Rarity"
+    }
+]);
+// Re-arrange elements as required
+$("#cost").insertBefore("label[for='cost']");
+document.querySelector("label[for=rarity]").setAttribute("style", "text-align: right");
+
+
+
+function createCarCardInputs(withLabels, div, inputsObjectArray) {
+    let input, label;
+    inputsObjectArray.forEach(function(value) {
+        if (withLabels) {
+            label = div.appendChild(document.createElement("label"));
+            label.setAttribute("class", value.class);
+            label.setAttribute("for", value.id);
+            label.innerHTML = value.label;
+        };
+        input = div.appendChild(document.createElement("input"));
+        input.setAttribute("disabled", null);
+        input.setAttribute("class", value.class);
+        input.setAttribute("id", value.id);
+    });
+};
+
+
 
 /////////////////////////////////////////////////////////////////////////////////////////
 // SELECTOR BUILDERS ////////////////////////////////////////////////////////////////////
@@ -15,15 +136,13 @@ let option; // Container for creating and setting new options
 
 // CREATE COUNTRIES
 // Label
-divSelectors.appendChild(document.createElement("label"));
-let labelCountries = document.querySelector("div#selectors > label:last-child");
+let labelCountries = divSelectors.appendChild(document.createElement("label"));
 labelCountries.className = "selector";
 labelCountries.setAttribute("for","countries");
 labelCountries.innerHTML = "Select a country: ";
 
 // Select
-divSelectors.appendChild(document.createElement("select"))
-let selectCountries = document.querySelector("div#selectors > select:last-child");
+let selectCountries = divSelectors.appendChild(document.createElement("select"))
 selectCountries.className = "selector";
 selectCountries.setAttribute("id", "countries");
 
@@ -47,15 +166,13 @@ countriesList.forEach(function (value, index) {
 // CREATE MARQUES
 // Label
 divSelectors.appendChild(document.createElement("br"));
-divSelectors.appendChild(document.createElement("label"));
-let labelMarques = document.querySelector("div#selectors > label:last-child");
+let labelMarques = divSelectors.appendChild(document.createElement("label"));
 labelMarques.className = "selector";
 labelMarques.setAttribute("for","marques");
 labelMarques.innerHTML = "Select a marque: ";
 
 // Select
-divSelectors.appendChild(document.createElement("select"));
-let selectMarques = document.querySelector("div#selectors > select:last-child");
+let selectMarques = divSelectors.appendChild(document.createElement("select"));
 selectMarques.className = "selector";
 selectMarques.setAttribute("id", "marques");
 selectMarques.setAttribute("disabled", true);
@@ -63,15 +180,13 @@ selectMarques.setAttribute("disabled", true);
 // CREATE VEHICLES
 // Label
 divSelectors.appendChild(document.createElement("br"));
-divSelectors.appendChild(document.createElement("label"));
-let labelVehicles = document.querySelector("div#selectors > label:last-child");
+let labelVehicles = divSelectors.appendChild(document.createElement("label"));
 labelVehicles.className = "selector";
 labelVehicles.setAttribute("for","vehicles");
 labelVehicles.innerHTML = "Select a vehicle: ";
 
 // Select
-divSelectors.appendChild(document.createElement("select"));
-let selectVehicles = document.querySelector("div#selectors > select:last-child");
+let selectVehicles = divSelectors.appendChild(document.createElement("select"));
 selectVehicles.className = "selector";
 selectVehicles.setAttribute("id", "vehicles");
 selectVehicles.setAttribute("disabled", true);

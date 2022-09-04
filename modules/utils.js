@@ -31,7 +31,6 @@ export function statCalculator(value, min, max) {
     };
 };
 
-
 // Deprecated, replaced by stat calculator
 export function rangeEvaluatorOld(value, min, max) {
     if (value >= max) {
