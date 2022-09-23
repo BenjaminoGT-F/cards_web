@@ -30,3 +30,21 @@ Element copy > JS Path (for JS Command with CSS Selector)
 Element Ctrl+F (Find) (to use CSS paths and selectors)
 Event listeners (see what active listeners there are)
     - e.g. hashchange for URL fragment changes with # (e.g. going to a specific id)
+
+
+PROMISES
+Using setTimeout
+await new Promise(function(resolve) {
+    setTimeout(function() {
+        resolve();
+    });
+});
+
+In a function
+function wait(miliseconds) {
+    return new Promise(function(resolve) {
+        setTimeout(function() {
+            resolve();
+        }, miliseconds);
+    });
+};

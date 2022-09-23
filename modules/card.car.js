@@ -42,7 +42,8 @@ export class CarCard {
         this.style = vehicle.styleRating;
         
         this.overall = Math.round((this.topSpeed + this.acceleration + this.turning + this.durability + this.endurance + this.style)/6);
-        this.cost = statCalculator(vehicle.price, 3000, 300000);
-        this.rarity = statCalculator(vehicle.numbersSold, 0, 250000);
+        this.cost = Math.round(vehicle.price / 10000);
+        this.rarity = vehicle.rarityRating;  // Roughly based on numbers sold and desired rating of the carCard based on overall stats and price. Exact sales figures are too difficult to obtain
+
     };
-}
+};

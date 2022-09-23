@@ -39,7 +39,7 @@
 
         "description": null,
         "price": null,
-        "numbersSold": 1000000
+        "rarityRating": 0
     },
     {
         "carId": 1,
@@ -81,7 +81,7 @@
 
         "desription": null,
         "price": 11595,
-        "numbersSold": 100000
+        "rarityRating": 8
     },
     {
         "carId": 2,
@@ -123,7 +123,7 @@
 
         "desription": null,
         "price": 22078,
-        "numbersSold": 10000
+        "rarityRating": 3
     },
     {
         "carId": 3,
@@ -165,7 +165,7 @@
 
         "description": null,
         "price": 27281,
-        "numbersSold": 1000000
+        "rarityRating": 6
     },
     {
         "carId": 3,
@@ -207,7 +207,7 @@
 
         "description": null,
         "price": 39081,
-        "numbersSold": 5000
+        "rarityRating": 5
     },
     {
         "carId": 4,
@@ -249,6 +249,6 @@
 
         "description": null,
         "price": 500000,
-        "numbersSold": 282
+        "rarityRating": 2
     }
 ]

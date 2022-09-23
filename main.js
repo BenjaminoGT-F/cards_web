@@ -5,7 +5,7 @@ import vehiclesList from "./data/cars.json" assert {type: "json"};
 import * as utils from "./modules/utils.js";
 import {CarCard} from "./modules/card.car.js";
 
-let div, option; // Containers for creating and setting new elements
+let div, option, card, car; // Containers for creating and setting new elements
 
 /////////////////////////////////////////////////////////////////////////////////////////
 // BASE STRUCTURE BUILDER ///////////////////////////////////////////////////////////////
@@ -22,6 +22,27 @@ let divCarCard = divSelectors.parentNode.insertBefore(document.createElement("di
 divCarCard.setAttribute("id", "carCard");
 let h1CarCard = divCarCard.appendChild(document.createElement("h1"));
 h1CarCard.innerHTML = "Car Card";
+
+let mainMenuBar = divSelectors.parentNode.insertBefore(document.createElement("div"), divCarCard.nextSibling);
+mainMenuBar.setAttribute("id", "mainMenu");
+mainMenuBar.setAttribute("class", "main-menu");
+createCarCardInputs(true, mainMenuBar.appendChild(document.createElement("div")), [
+    {
+        class: "card-stat",
+        id: "credit-balance",
+        label: "Balance Cr."
+    }
+]);
+let creditBalance = document.querySelector("#credit-balance");
+let buyButton = mainMenuBar.appendChild(document.createElement("button"));
+buyButton.setAttribute("id","buyButton");
+buyButton.setAttribute("disabled", null);
+buyButton.innerHTML = "Buy";
+
+let currentBalance = 100;
+creditBalance.value = currentBalance;
+
+let myCardGarage = [];
 
 /////////////////////////////////////////////////////////////////////////////////////////
 // CAR CARD BUILDER /////////////////////////////////////////////////////////////////////
@@ -98,7 +119,7 @@ createCarCardInputs(true, divCarCard.appendChild(document.createElement("div")),
     {
         class: "card-stat",
         id: "cost",
-        label: "Credits"
+        label: "Price Cr."
     },
     {
         class: "card-stat",
@@ -220,6 +241,7 @@ document.querySelector("select#countries").addEventListener("change", function()
     // If the vehicle one has been activated from a previous run, disable that until a new marque has been picked
     if (selectVehicles.getAttribute("disabled") == null) {
         selectVehicles.setAttribute("disabled", null);
+        buyButton.setAttribute("disabled", null);
     };
 
     // Loop through each marque in the database returning those that match the ID to populate the marques list
@@ -234,7 +256,7 @@ document.querySelector("select#countries").addEventListener("change", function()
     });
 
     return true;
-})
+});
 
 
 // MARQUES
@@ -281,14 +303,17 @@ document.querySelector("select#vehicles").addEventListener("change", function() 
     };
 
     // Get car basic stats from database based on currently selected value, then generate a new car card from these stats
-    let car = vehiclesList[document.querySelector("select#vehicles").value];
-    let card = new CarCard(car, "-");
+    car = vehiclesList[document.querySelector("select#vehicles").value];
+    card = new CarCard(car, "-");
 
     updateCard(card);
 
-    console.log("DEBUG: " + JSON.stringify(car));
-    console.log("DEBUG: " + JSON.stringify(card));
+    buyButton.removeAttribute("disabled"); // Activate the buy button
 });
+
+//////////////////////////////////////////////////////////////////////////////////
+// SUB-ROUTINES //////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
 
 function updateCard(card) {
     document.querySelector("div#carCard input#marque").value = card.marque;
@@ -304,4 +329,46 @@ function updateCard(card) {
     document.querySelector("div#carCard input#style").value = card.style;
     document.querySelector("div#carCard input#cost").value = card.cost;
     document.querySelector("div#carCard input#rarity").value = card.rarity;
+    
+    console.log(card.overall);
 };
+
+buyButton.addEventListener("click", function() {
+    if(currentBalance < card.cost) {
+        // First work out whether enough funds exist
+        alert("Insufficient funds!");
+    }
+    else if(myCardGarage.length == 10) {
+        // Then work out if there's actually enough space in the garage (max 10!)
+        alert("Garage already full!")
+    }
+    else {
+        // Otherwise continue with purchase by subtracting cost from balance
+        let reg;
+        currentBalance = currentBalance - card.cost;
+        creditBalance.value = currentBalance;
+        // Assigning a reg as a unique identifier - let users assign their own or assign one by default
+        // TODO: Uniqueness evaluator for reg
+        do {
+            reg = prompt("Please enter registration (max. 7 characters) or leave blank for randomisation");
+            if (reg == '' || reg === null) {
+                reg = utils.generateRandomReg();
+            };
+        }
+        while (reg.length > 7);
+        // Create a new instance of the car with the reg as a unique identifier and store in garage
+        myCardGarage.push(new CarCard(car, reg));
+        // DEBUG print garage to list (to be replaced by on-screen dropdown list)
+        myCardGarage.forEach(function(value, index) {
+            console.log("DEBUG: Slot " + 
+                (index + 1) + ": " +
+                value.carId + " " +
+                value.reg + " " +
+                value.marque + " " +
+                value.modelName + " " +
+                value.trimName + " " +
+                value.generation
+            );
+        });
+    };
+});

@@ -37,3 +37,8 @@ img.card-photo {
 button.buy {
     margin: 24px;
 }
+
+div.main-menu {
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
