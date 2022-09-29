@@ -39,10 +39,14 @@ buyButton.setAttribute("id","buyButton");
 buyButton.setAttribute("disabled", null);
 buyButton.innerHTML = "Buy";
 
+let myCardGarage = [];
 let currentBalance = 100;
 creditBalance.value = currentBalance;
 
-let myCardGarage = [];
+let divGarage = divSelectors.parentNode.insertBefore(document.createElement("div"), mainMenuBar.nextSibling);
+divGarage.setAttribute("id", "garage");
+let h1Garage = divGarage.appendChild(document.createElement("h1"));
+h1Garage.innerHTML = "My Garage";
 
 /////////////////////////////////////////////////////////////////////////////////////////
 // CAR CARD BUILDER /////////////////////////////////////////////////////////////////////
@@ -212,6 +216,21 @@ selectVehicles.className = "selector";
 selectVehicles.setAttribute("id", "vehicles");
 selectVehicles.setAttribute("disabled", true);
 
+// CREATE GARAGE
+// Select
+let garageList = divGarage.appendChild(document.createElement("select"));
+garageList.className = "selector";
+garageList.setAttribute("id", "own-vehicles");
+
+// Options
+// Defaults
+garageList.appendChild(document.createElement("option"));
+option = document.querySelector("select#own-vehicles > option");
+option.setAttribute("selected", null);
+option.setAttribute("disabled", null);
+option.setAttribute("hidden", null);
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 // SELECTOR CHANGERS ///////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -311,6 +330,10 @@ document.querySelector("select#vehicles").addEventListener("change", function() 
     buyButton.removeAttribute("disabled"); // Activate the buy button
 });
 
+// GARAGE (OWN-VEHICLES)
+// Update car card when garage item is selected
+
+
 //////////////////////////////////////////////////////////////////////////////////
 // SUB-ROUTINES //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
@@ -358,17 +381,10 @@ buyButton.addEventListener("click", function() {
         while (reg.length > 7);
         // Create a new instance of the car with the reg as a unique identifier and store in garage
         myCardGarage.push(new CarCard(car, reg));
-        // DEBUG print garage to list (to be replaced by on-screen dropdown list)
-        myCardGarage.forEach(function(value, index) {
-            console.log("DEBUG: Slot " + 
-                (index + 1) + ": " +
-                value.carId + " " +
-                value.reg + " " +
-                value.marque + " " +
-                value.modelName + " " +
-                value.trimName + " " +
-                value.generation
-            );
-        });
+        // Add latest carCard to garage
+        garageList.appendChild(document.createElement("option"));
+        option = document.querySelector("select#own-vehicles > option:last-child");
+        option.value = myCardGarage[myCardGarage.length - 1].carId;
+        option.innerHTML =  myCardGarage[myCardGarage.length - 1].marque + " " + myCardGarage[myCardGarage.length - 1].modelName + " " + myCardGarage[myCardGarage.length - 1].trimName + " " + myCardGarage[myCardGarage.length - 1].generation + " (" + myCardGarage[myCardGarage.length - 1].reg + ")";
     };
 });

@@ -14,7 +14,7 @@ export class CarCard {
             else {
                 return generateRandomReg();
             };
-        })();        
+        })();
         this.modelName = vehicle.modelName;
         this.trimName = vehicle.trimName;
         this.generation = generationInRoman(vehicle.generationId);
@@ -26,6 +26,7 @@ export class CarCard {
 
         this.topSpeed = statCalculator(vehicle.vmaxKph, 80, 400);
         this.acceleration = 101 - statCalculator(vehicle.acc100KphSec, 3, 15);
+        this.braking = statCalculator(vehicle.stoppingDistance) // https://www.consumerreports.org/car-safety/best-and-worst-braking-distances-a2960086475/
         this.turning = 101 - (function() {
             // To review this. Does height need more of an impact?
             let combined = vehicle.dimensionsM.length + vehicle.dimensionsM.width + vehicle.dimensionsM.height;
@@ -44,6 +45,5 @@ export class CarCard {
         this.overall = Math.round((this.topSpeed + this.acceleration + this.turning + this.durability + this.endurance + this.style)/6);
         this.cost = Math.round(vehicle.price / 10000);
         this.rarity = vehicle.rarityRating;  // Roughly based on numbers sold and desired rating of the carCard based on overall stats and price. Exact sales figures are too difficult to obtain
-
     };
 };

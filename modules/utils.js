@@ -4,7 +4,7 @@ export const generationInRoman = function (num) {
 };
 
 export const generateRandomReg = function () {
-    let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-";
     let randStr = "";
 
     for (let i = 0; i < 7; i++) {
@@ -31,7 +31,7 @@ export function statCalculator(value, min, max) {
     };
 };
 
-// Deprecated, replaced by stat calculator
+/* Deprecated, replaced by stat calculator
 export function rangeEvaluatorOld(value, min, max) {
     if (value >= max) {
         return 100;
@@ -61,3 +61,4 @@ export function expRangeEvaluatorOld(value, range) {
         };
     };
 };
+*/

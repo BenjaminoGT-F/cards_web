@@ -10,9 +10,7 @@
         "racingCar": false,
 
         "vmaxKph": 0,
-         "acc100KphSec": 0,
-        "numSeats": 0,
-        "storageL": 0,
+        "acc100KphSec": 0,
         "dimensionsM": {
             "length": 0.00,
             "width": 0.00,
@@ -21,7 +19,9 @@
         "kerbWeightKg": 0,
         "combinedFuelConsumptionMpg": 0.0,
         "fuelTankCapacityL": 0,
-        "safetyRating": 0.0,
+        "dragCoefficient": 0.0,
+        "stoppingDistanceM": 0,
+        "tyreWidthCombinedMM": 0,
         "styleRating": 0,
 
         "engineBhp": 0,
@@ -52,9 +52,7 @@
         "racingCar": false,
 
         "vmaxKph": 155,
-         "acc100KphSec": 13.8,
-        "numSeats": 5,
-        "storageL": 264,
+        "acc100KphSec": 13.8,
         "dimensionsM": {
             "length": 3.80,
             "width": 1.66,
@@ -63,7 +61,9 @@
         "kerbWeightKg": 860,
         "combinedFuelConsumptionMpg": 49,
         "fuelTankCapacityL": 47,
-        "safetyRating": 3,
+        "dragCoefficient": 0.0,
+        "stoppingDistanceM": 40,
+        "tyreWidthCombinedMM": 0,
         "styleRating": 80,
 
         "engineBhp": 60,
@@ -94,9 +94,7 @@
         "racingCar": false,
 
         "vmaxKph": 204,
-         "acc100KphSec": 8.3,
-        "numSeats": 5,
-        "storageL": 264,
+        "acc100KphSec": 8.3,
         "dimensionsM": {
             "length": 3.80,
             "width": 1.66,
@@ -105,7 +103,9 @@
         "kerbWeightKg": 1040,
         "combinedFuelConsumptionMpg": 34,
         "fuelTankCapacityL": 47,
-        "safetyRating": 3,
+        "dragCoefficient": 0.0,
+        "stoppingDistanceM": 0,
+        "tyreWidthCombinedMM": 0,
         "styleRating": 82,
 
         "engineBhp": 130,
@@ -137,8 +137,6 @@
 
         "vmaxKph": 229,
         "acc100KphSec": 6.8,
-        "numSeats": 4,
-        "storageL": 160,
         "dimensionsM": {
             "length": 3.73,
             "width": 1.91,
@@ -147,7 +145,9 @@
         "kerbWeightKg": 1130,
         "combinedFuelConsumptionMpg": 48,
         "fuelTankCapacityL": 50,
-        "safetyRating": 3.3,
+        "dragCoefficient": 0.0,
+        "stoppingDistanceM": 0,
+        "tyreWidthCombinedMM": 0,
         "styleRating": 85,
 
         "engineBhp": 181,
@@ -179,8 +179,6 @@
 
         "vmaxKph": 264,
         "acc100KphSec": 5.2,
-        "numSeats": 4,
-        "storageL": 160,
         "dimensionsM": {
             "length": 3.87,
             "width": 1.73,
@@ -189,7 +187,9 @@
         "kerbWeightKg": 1235,
         "combinedFuelConsumptionMpg": 41,
         "fuelTankCapacityL": 40,
-        "safetyRating": 4,
+        "dragCoefficient": 0.0,
+        "stoppingDistanceM": 0,
+        "tyreWidthCombinedMM": 0,
         "styleRating": 90,
 
         "engineBhp": 306,
@@ -221,8 +221,6 @@
 
         "vmaxKph": 343,
         "acc100KphSec": 3.8,
-        "numSeats": 0,
-        "storageL": 0,
         "dimensionsM": {
             "length": 4.93,
             "width": 2.22,
@@ -231,7 +229,9 @@
         "kerbWeightKg": 1470,
         "combinedFuelConsumptionMpg": 32,
         "fuelTankCapacityL": 90,
-        "safetyRating": 2.2,
+        "dragCoefficient": 0.0,
+        "stoppingDistanceM": 0,
+        "tyreWidthCombinedMM": 0,
         "styleRating": 85,
 
         "engineBhp": 543,
