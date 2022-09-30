@@ -91,8 +91,8 @@ createCarCardInputs(true, divCarCard.appendChild(document.createElement("div")),
     },
     {
         class: "card-stat",
-        id: "durability",
-        label: "Durability"
+        id: "handling",
+        label: "Handling"
     }
 ]);
 createCarCardInputs(true, divCarCard.appendChild(document.createElement("div")), [
@@ -103,16 +103,23 @@ createCarCardInputs(true, divCarCard.appendChild(document.createElement("div")),
     },
     {
         class: "card-stat",
-        id: "endurance",
-        label: "Endurance"
+        id: "durability",
+        label: "Durability"
     }
 ]);
 createCarCardInputs(true, divCarCard.appendChild(document.createElement("div")), [
     {
         class: "card-stat",
-        id: "turning",
-        label: "Turning"
+        id: "braking",
+        label: "Braking"
     },
+    {
+        class: "card-stat",
+        id: "endurance",
+        label: "Endurance"
+    }
+]);
+createCarCardInputs(true, divCarCard.appendChild(document.createElement("div")), [
     {
         class: "card-stat",
         id: "style",
@@ -346,7 +353,8 @@ function updateCard(card) {
     document.querySelector("div#carCard input#nation").value = card.nation;
     document.querySelector("div#carCard input#top-speed").value = card.topSpeed;
     document.querySelector("div#carCard input#acceleration").value = card.acceleration;
-    document.querySelector("div#carCard input#turning").value = card.turning;
+    document.querySelector("div#carCard input#braking").value = card.braking;
+    document.querySelector("div#carCard input#handling").value = card.handling;
     document.querySelector("div#carCard input#durability").value = card.durability;
     document.querySelector("div#carCard input#endurance").value = card.endurance;
     document.querySelector("div#carCard input#style").value = card.style;

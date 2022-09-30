@@ -26,20 +26,10 @@ export class CarCard {
 
         this.topSpeed = statCalculator(vehicle.vmaxKph, 80, 400);
         this.acceleration = 101 - statCalculator(vehicle.acc100KphSec, 3, 15);
-        this.braking = statCalculator(vehicle.stoppingDistance) // https://www.consumerreports.org/car-safety/best-and-worst-braking-distances-a2960086475/
-        this.turning = 101 - (function() {
-            // To review this. Does height need more of an impact?
-            let combined = vehicle.dimensionsM.length + vehicle.dimensionsM.width + vehicle.dimensionsM.height;
-            return statCalculator(combined, 6, 10);
-        })();
+        this.braking = 101 - statCalculator(vehicle.stoppingDistanceM, 20, 50) // https://www.consumerreports.org/car-safety/best-and-worst-braking-distances-a2960086475/, https://fastestlaps.com/
+        this.handling = 101 - statCalculator(vehicle.dimensionsM.length + vehicle.dimensionsM.width + vehicle.dimensionsM.height, 6, 10);
         this.durability = statCalculator(vehicle.kerbWeightKg, 500, 2700);
-        this.endurance = (function() {
-            // needs to be better worked-out to find the most fuel efficient cars with the biggest fuel tank and vice versa
-            // Ford Focus 1,000 miles on single 52L tank
-            let consumption = statCalculator(vehicle.combinedFuelConsumptionMpg, 5, 65);
-            let tankSize = statCalculator(vehicle.fuelTankCapacityL, 5, 130);
-            return Math.round((consumption + tankSize) / 2);
-        })();
+        this.endurance = statCalculator(vehicle.combinedFuelConsumptionMpg, 5, 65)
         this.style = vehicle.styleRating;
         
         this.overall = Math.round((this.topSpeed + this.acceleration + this.turning + this.durability + this.endurance + this.style)/6);
