@@ -5,26 +5,28 @@ import vehiclesList from "./data/cars.json" assert {type: "json"};
 import * as utils from "./modules/utils.js";
 import {CarCard} from "./modules/card.car.js";
 
-let div, option, card, car; // Containers for creating and setting new elements
+let h1, option, card, car; // Containers for creating and setting new elements
 
 /////////////////////////////////////////////////////////////////////////////////////////
 // BASE STRUCTURE BUILDER ///////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////
 
 let scriptMain = document.querySelector("script[src='./main.js']");
+let divMain = scriptMain.parentNode.insertBefore(document.createElement("div"), scriptMain.nextSibling);
+divMain.style = "margin-left: auto; margin-right: auto; width: 400px;";
 
-let divSelectors = scriptMain.parentNode.insertBefore(document.createElement("div"), scriptMain.nextSibling);
+h1 = divMain.appendChild(document.createElement("h1"));
+h1.innerHTML = "Find a Dealer"
+let divSelectors = divMain.appendChild(document.createElement("div"))
 divSelectors.setAttribute("id", "selectors");
-let h1Dealer = divSelectors.appendChild(document.createElement("h1"));
-h1Dealer.innerHTML = "Find a Dealer"
 
-let divCarCard = divSelectors.parentNode.insertBefore(document.createElement("div"), divSelectors.nextSibling);
+h1 = divMain.appendChild(document.createElement("h1"));
+h1.innerHTML = "Car Card";
+let divCarCard = divMain.appendChild(document.createElement("div"));
 divCarCard.setAttribute("id", "carCard");
-let h1CarCard = divCarCard.appendChild(document.createElement("h1"));
-h1CarCard.innerHTML = "Car Card";
+divCarCard.style = "margin-left: auto; margin-right: auto; width: 256px;";
 
-let mainMenuBar = divSelectors.parentNode.insertBefore(document.createElement("div"), divCarCard.nextSibling);
-mainMenuBar.setAttribute("id", "mainMenu");
+let mainMenuBar = divMain.appendChild(document.createElement("div"));
 mainMenuBar.setAttribute("class", "main-menu");
 createCarCardInputs(true, mainMenuBar.appendChild(document.createElement("div")), [
     {
@@ -33,8 +35,9 @@ createCarCardInputs(true, mainMenuBar.appendChild(document.createElement("div"))
         label: "Balance Cr."
     }
 ]);
+let divBuy = mainMenuBar.appendChild(document.createElement("div"));
 let creditBalance = document.querySelector("#credit-balance");
-let buyButton = mainMenuBar.appendChild(document.createElement("button"));
+let buyButton = divBuy.appendChild(document.createElement("button"));
 buyButton.setAttribute("id","buyButton");
 buyButton.setAttribute("disabled", null);
 buyButton.innerHTML = "Buy";
@@ -43,10 +46,9 @@ let myCardGarage = [];
 let currentBalance = 100;
 creditBalance.value = currentBalance;
 
-let divGarage = divSelectors.parentNode.insertBefore(document.createElement("div"), mainMenuBar.nextSibling);
-divGarage.setAttribute("id", "garage");
-let h1Garage = divGarage.appendChild(document.createElement("h1"));
-h1Garage.innerHTML = "My Garage";
+h1 = divMain.appendChild(document.createElement("h1"));
+h1.innerHTML = "My Garage";
+let divGarage = divMain.appendChild(document.createElement("div"));
 
 /////////////////////////////////////////////////////////////////////////////////////////
 // CAR CARD BUILDER /////////////////////////////////////////////////////////////////////
@@ -141,8 +143,6 @@ createCarCardInputs(true, divCarCard.appendChild(document.createElement("div")),
 // Re-arrange elements as required
 $("#cost").insertBefore("label[for='cost']");
 document.querySelector("label[for=rarity]").setAttribute("style", "text-align: right");
-
-
 
 function createCarCardInputs(withLabels, div, inputsObjectArray) {
     let input, label;
@@ -360,8 +360,6 @@ function updateCard(card) {
     document.querySelector("div#carCard input#style").value = card.style;
     document.querySelector("div#carCard input#cost").value = card.cost;
     document.querySelector("div#carCard input#rarity").value = card.rarity;
-    
-    console.log(card.overall);
 };
 
 buyButton.addEventListener("click", function() {
@@ -394,5 +392,6 @@ buyButton.addEventListener("click", function() {
         option = document.querySelector("select#own-vehicles > option:last-child");
         option.value = myCardGarage[myCardGarage.length - 1].carId;
         option.innerHTML =  myCardGarage[myCardGarage.length - 1].marque + " " + myCardGarage[myCardGarage.length - 1].modelName + " " + myCardGarage[myCardGarage.length - 1].trimName + " " + myCardGarage[myCardGarage.length - 1].generation + " (" + myCardGarage[myCardGarage.length - 1].reg + ")";
+        console.log(myCardGarage[myCardGarage.length - 1].debug());
     };
 });

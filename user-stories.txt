@@ -1,0 +1,10 @@
+Epic
+As a player, I want to collect and play with car cards, so I can be entertained
+
+Feature
+As a player, I want to search for all the different car cards available, so I can decide which ones I want to buy
+As a player, I want to review the car cards I currently own, so I can choose which one to play with or decide which ones I want to buy
+As a player, I want to compare my car cards key stats with those of other players so I can see who has the best collection
+As a player, I want to experiment creating my own car cards, so I can see how they would be represented in game
+
+Story

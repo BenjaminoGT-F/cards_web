@@ -7,14 +7,7 @@ import {generateRandomReg, generationInRoman, statCalculator} from "./utils.js";
 export class CarCard {
     constructor(vehicle, reg) {
         this.carId = vehicle.carId;
-        this.reg = (function() {
-            if (reg) {
-                return reg;
-            }
-            else {
-                return generateRandomReg();
-            };
-        })();
+        this.reg = reg;
         this.modelName = vehicle.modelName;
         this.trimName = vehicle.trimName;
         this.generation = generationInRoman(vehicle.generationId);
@@ -26,14 +19,18 @@ export class CarCard {
 
         this.topSpeed = statCalculator(vehicle.vmaxKph, 80, 400);
         this.acceleration = 101 - statCalculator(vehicle.acc100KphSec, 3, 15);
-        this.braking = 101 - statCalculator(vehicle.stoppingDistanceM, 20, 50) // https://www.consumerreports.org/car-safety/best-and-worst-braking-distances-a2960086475/, https://fastestlaps.com/
+        this.braking = 101 - statCalculator(vehicle.stoppingDistanceM, 20, 50) // https://fastestlaps.com/, https://www.consumerreports.org/car-safety/best-and-worst-braking-distances-a2960086475/, 
         this.handling = 101 - statCalculator(vehicle.dimensionsM.length + vehicle.dimensionsM.width + vehicle.dimensionsM.height, 6, 10);
         this.durability = statCalculator(vehicle.kerbWeightKg, 500, 2700);
         this.endurance = statCalculator(vehicle.combinedFuelConsumptionMpg, 5, 65)
         this.style = vehicle.styleRating;
         
-        this.overall = Math.round((this.topSpeed + this.acceleration + this.turning + this.durability + this.endurance + this.style)/6);
+        this.overall = Math.round((this.topSpeed + this.acceleration + this.braking + this.handling + this.durability + this.endurance + this.style)/6);
         this.cost = Math.round(vehicle.price / 10000);
         this.rarity = vehicle.rarityRating;  // Roughly based on numbers sold and desired rating of the carCard based on overall stats and price. Exact sales figures are too difficult to obtain
+    };
+
+    debug() {
+        console.log(JSON.stringify(this));
     };
 };
